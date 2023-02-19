@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <title>Online Grocery Shopping Website</title>
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.7.5/swiper-bundle.min.css"/>
+
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" type="text/css" href="index.html">
+    <link rel="stylesheet" href="stylee.css"/>
+</head>
+<body>
+
+<!-- header section  -->
+
+<header>
+
+    <div class="header-1">
+
+        <a href="#" class="logo"><i class="fa fa-shopping-basket"></i> Green Cart</a>
+
+        <form action="" class="search-box-container">
+            <input type="search" id="search-box" placeholder="search here...">
+            <label for="search-box" class="fa fa-search"></label>
+        </form>
+
+    </div>
+
+    <div class="header-2">
+
+        <div id="menu-bar" class="fa fa-bars"></div>
+
+        <nav class="navbar">
+            <a href="#home">home</a>
+            <a href="#features">features</a>
+            <a href="#category">category</a>
+            <a href="#product">product</a>
+            <a href="#deal">deal</a>
+            <a href="#contact">contact</a>
+        </nav>
+
+        <div class="icons">
+            <a href="#cart" class="fa fa-shopping-cart" id="cart-btn"></a>
+            <a href="#" class="fa fa-heart" id="heart-btn"></a>
+            <a href="#" class="fa fa-user" id="login-btn"></a>
+
+        </div>
+        <form action="" class="login-form">
+
+            <h3>Login Form</h3>
+            <p class="error"></p>
+
+            <input type="UserName" placeholder="enter your email" class="box" id="username">
+            <input type="password" placeholder="enter your password" class="box" id="password">
+
+            <div class="remember">
+                <input type="checkbox" name="" id="remember-me">
+                <label for="remember-me">Remember me</label>
+            </div>
+            <p>Forget your password <a href="#">Click Here</a></p>
+        <p>Don't have an account <a href="signup form.html">Create Now</a></p>
+            <button type="submit" class="btn">Login</button>
+
+        </form>
+    </div>
+</header>
+
+<p class="warning p-2"></p>
+    <form autocomplete="off" id="form" class="p-4">
+        
+        <p class="h4 mb-4">Create account</p>
+
+        <label for="name" class="userName">Your name</label><span>&nbsp;*</span>
+        <input type="text" required id="name" class="form-control mb-4">
+
+        <label for="email" class="emailLabel">E-mail</label><span>&nbsp;*</span>
+        <input type="email" required id="email" class="form-control mb-4">
+
+        <label for="contact" class="emailLabel">Contact number</label><span>&nbsp;*</span>
+        <input type="number" required id="contact" class="form-control mb-4">
+
+        <label for="password" class="passwordLabel">Password</label><span>&nbsp;*</span>
+        <input type="password" required id="password" class="form-control mb-4">
+
+        <label for="passwordAgain" class="passwordLabel">Password again</label><span>&nbsp;*</span>
+        <input type="password" required id="passwordAgain" class="form-control mb-4">
+
+        <label for="address" class="address">Address</label><span>&nbsp;*</span>
+        <textarea required id="textarea" class="form-control mb-4" rows="5"></textarea>
+
+        <button type="submit" class="btn btn-warning btn-block" id="signIn">Create your account</button>
+    </form>
+
+    <section class="footer">
+
+    <div class="box-container">
+
+        <div class="box">
+            <a href="#" class="logo"><i class="fa fa-shopping-basket"></i> Green Cart</a>
+            <p>Order online vegetables & fruits directly from the farm. Green Cart is online platform that allows customer to get farm fresh produce directly from farmers.</p>
+            <div class="share">
+                <a href="#" class="fa fa-facebook"></a>
+                <a href="#" class="fa fa-twitter"></a>
+                <a href="#" class="fa fa-instagram"></a>
+                <a href="#" class="fa fa-linkedin"></a>
+            </div>
+        </div>
+        
+       <div class="box">
+            <h3>contact info</h3>
+            <a href="#" class="links"> <i class="fa fa-phone"></i> +91-9626589483 </a>
+            <a href="#" class="links"> <i class="fa fa-phone"></i> +91-9952365198 </a>
+            <a href="#" class="links"> <i class="fa fa-envelope"></i> gmart@gmail.com </a>
+            <a href="#" class="links"> <i class="fa fa-map-marker-alt"></i> TamilNadu, India ,631204 </a>
+        </div>
+
+        <div class="box">
+            <h3>quick links</h3>
+            <div class="links">
+                <a href="#home"><i class="fa fa-arrow-right"></i> home</a>
+                <a href="#category"><i class="fa fa-arrow-right"></i> category</a>
+                <a href="#product"><i class="fa fa-arrow-right"></i> product</a> 
+                <a href="#deal"><i class="fa fa-arrow-right"></i> deal</a>
+                <a href="#contact"><i class="fa fa-arrow-right"></i> contact</a>
+            </div>
+        </div>
+
+        <div class="box">
+            <h3>download app</h3>
+            <div class="links">
+                <a href="#">google play</a>
+                <a href="#">window xp</a>
+                <a href="#">app store</a>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+ <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.29.2/dist/sweetalert2.all.min.js"></script>
+    <script src="usersignup.js"></script>
+</body>
+</html>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <title>Sign-Up Form</title>
+    <style type="text/css">
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins',sans-serif;
+}
+body{
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:white;
+  position: relative;
+}
+
+.mainContainer{
+    background-color: white;
+    border :0px;
+    padding : 10px;
+    display: table;
+    margin: auto;
+    width:350px;
+}
+
+.labelledClass label,input {display: block;}
+
+.labelledClass p{
+    margin: 5px 0px;
+    font-size: 14px;
+}
+
+.labelledClass input{
+    border : none;
+    border : solid 1px #ccc;
+    border-radius: 5px;
+    width: 100%;
+    padding : 5px;
+}
+
+.labelledClass label{margin-bottom: 5px;}
+
+.labelledClass{margin-bottom : 10px;}
+
+.btn{
+    border : none;
+    width : 100%;    
+    color: white;
+    background-color: green;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+.btn:hover {cursor: pointer;}
+
+.bottomLine{
+    color :black;
+    display: inline;
+}
+
+.bottom{
+    margin-top: 10px;
+    text-align: center;
+}
+
+.bottom a{
+    text-decoration : none;
+    color : rgb(133, 247, 228);
+}
+
+.mainContainer span{
+    color: blue;
+    text-align: center;
+    display: block;
+}
+
+
+    </style>
+
+<link rel="stylesheet" type="text/css" href="index.css">
+</head>
+
+
+<header>
+
+    <div class="header-1">
+
+        <a href="#" class="logo"><i class="fa fa-shopping-basket"></i> Green Cart</a>
+
+        <form action="" class="search-box-container">
+            <input type="search" id="search-box" placeholder="search here...">
+            <label for="search-box" class="fa fa-search"></label>
+        </form>
+
+    </div>
+
+    <div class="header-2">
+
+        <div id="menu-bar" class="fa fa-bars"></div>
+
+        <nav class="navbar">
+            <a href="#home">home</a>
+            <a href="#features">features</a>
+            <a href="#category">category</a>
+            <a href="#product">product</a>
+            <a href="#deal">deal</a>
+            <a href="#contact">contact</a>
+        </nav>
+
+        <div class="icons">
+            <a href="#cart" class="fa fa-shopping-cart" id="cart-btn"></a>
+            <a href="#" class="fa fa-heart" id="heart-btn"></a>
+            <a href="#" class="fa fa-user" id="login-btn"></a>
+
+        </div>
+        <form action="" class="login-form">
+
+            <h3>Login Form</h3>
+            <p class="error"></p>
+
+            <input type="UserName" placeholder="enter your email" class="box" id="username">
+            <input type="password" placeholder="enter your password" class="box" id="password">
+
+            <div class="remember">
+                <input type="checkbox" name="" id="remember-me">
+                <label for="remember-me">Remember me</label>
+            </div>
+            <p>Forget your password <a href="#">Click Here</a></p>
+        <p>Don't have an account <a href="signup form.html">Create Now</a></p>
+            <button type="submit" class="btn">Login</button>
+
+        </form>
+    </div>
+</header>
+
+
+<body>
+    <div class="content">
+      <div class="image-box">
+      </div>
+    <div class="mainContainer">
+        <h1 style="text-align: center;">Sign Up</h1>
+        <form action="#">
+            <div class="labelledClass">
+                <label for="FirstName">FirstName</label>
+                <input type="text" name="FirstName" id="FirstName" maxlength="30">
+                <p></p>
+            </div>
+            <div class="labelledClass">
+                <label for="LastName">LastName</label>
+                <input type="text" name="LastName" id="LastName" maxlength="30">
+                <p></p>
+            </div>
+            <div class="labelledClass">
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" maxlength="30">
+                <p></p>
+            </div>
+            <div class="labelledClass">
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" maxlength="30">
+                <p></p>
+            </div>
+            <div class="labelledClass">
+                <label for="confirmPassword">confirm password</label>
+                <input type="password" name="confirmPassword" id="confirmPassword" maxlength="30">
+                <p></p>
+            </div>
+            <button class="btn">Sign Up</button>
+        </form>
+    <div class="bottom">
+    <p class = "bottomLine">Already have an account?</p>
+    <a href="index.html">Login Here</a>
+    </div>
+  </div>
+<script type="text/javascript">
+const fId = document.getElementById('FirstName');
+const lId = document.getElementById('LastName');
+const emailInput = document.getElementById('email');
+const passwordField = document.getElementById('password');
+const confirmPasswordField = document.getElementById('confirmPassword');
+const signUp = document.querySelector('form button');
+
+let errorMsg,currentField,passMsg;
+
+function showError(fieldName){
+    currentField = fieldName;
+    currentField.style.border = '2px solid red';
+    errorMsg = currentField.parentElement.lastElementChild;
+    currentField.name === 'FirstName' || currentField.name === 'LastName' ? 
+    errorMsg.textContent = `${currentField.name.toLowerCase()} should be atleast 5 characters` : 
+    currentField.name === 'email' ? errorMsg.textContent = 'not a valid email' : currentField.name === 'password' ?
+    errorMsg.textContent = 'password should be atleast 8 characters' : errorMsg.textContent = 'passwords do not match';
+    errorMsg.style.color = 'red';
+}
+
+function showPass(fieldName){
+    passMsg = fieldName.parentElement.lastElementChild;
+    fieldName.style.border = '2px solid green';
+    passMsg.textContent = '';    
+}
+
+function checkNames(){
+    fId.value.length >= 5 ? showPass(fId) : showError(fId);
+    lId.value.length >=5 ? showPass(lId) : showError(lId);
+}
+
+function checkEmail(){
+    const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    (re.test(String(emailInput.value).toLowerCase())) ? showPass(emailInput) : showError(emailInput);
+}
+
+function checkConfirmPassword(password){
+    password === confirmPasswordField.value ? showPass(confirmPasswordField) : showError(confirmPasswordField);
+}
+
+function checkPassword(){
+    let password = passwordField.value;
+    password.length >= 6 ? showPass(passwordField) : showError(passwordField);
+    checkConfirmPassword(password);
+}
+
+function checkRequirements(e){
+    checkNames();
+    checkEmail();
+    checkPassword();
+    e.preventDefault();
+}
+
+signUp.addEventListener('click',checkRequirements);
+</script>
+<script type="text/javascript" src="script.js"></script>
+</body>
+</html>

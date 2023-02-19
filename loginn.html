@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <title>Sign-Up Form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style type="text/css">
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+      :root{
+  --green:#27ae60;
+  --black:#2c2c54;
+}
+
+*{
+  font-family: 'Acme', sans-serif;
+  margin:0; padding:0;
+  box-sizing: border-box;
+  outline: none; border:none;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: all .2s linear;
+}
+
+*::selection{
+  background:var(--green);
+  color:#fff;
+}
+
+html{
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-padding-top: 6.5rem; 
+  scroll-behavior: smooth;
+}
+
+section{
+  padding:2rem 9%;
+}
+
+.btn{
+  display: inline-block;
+  margin-top: 1rem;
+  background:var(--green);
+  color:#fff;
+  padding:.8rem 3rem;
+  font-size: 1.7rem;
+  text-align: center;
+  cursor: pointer;
+}
+
+.btn:hover{
+  background:var(--black);
+}
+
+.heading{
+  text-align: center;
+  color:var(--black);
+  text-transform: uppercase;
+  padding:1rem;
+  font-size: 3.5rem;
+  padding-bottom: 2rem;
+}
+
+.heading span{
+  color:var(--green);
+  text-transform: uppercase;
+}
+
+.header-1{
+  background:#93f080cc;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding:1.5rem 9%;
+}
+
+.header-1 a{
+  font-size: 2rem;
+}
+
+.logo{
+  color:var(--black);
+  font-weight: bolder;
+  font-size: 2.5rem;
+}
+
+.logo i{
+  padding-right: .5rem;
+  color:var(--green);
+}
+
+.header-1 .search-box-container{
+  display: flex;
+  height:4rem;
+}
+
+.header-1 .search-box-container #search-box{
+  height: 100%;
+  width:100%;
+  padding:1rem;
+  font-size: 2rem;
+  color:#333;
+  border:.1rem solid rgba(0,0,0,.3);
+  text-transform: none;
+}
+
+.header-1 .search-box-container label{
+  height: 100%;
+  width:8rem;
+  font-size: 2.5rem;
+  line-height: 4rem;
+  color:#fff;
+  background:var(--green);
+  text-align: center;
+  cursor: pointer;
+}
+
+.header-1 .search-box-container label:hover{
+  background:var(--black);
+}
+
+.header-2{
+  background:#fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding:1.5rem 9%;
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+  position: relative;
+}
+
+.header-2.active{
+  position: fixed;
+  top:0; left: 0; right:0;
+  z-index: 10000;
+}
+
+.header-2 .navbar a{
+  padding:.5rem 1.5rem;
+  font-size: 2rem;
+  border-radius: .5rem;
+  color:var(--black);
+}
+
+.header-2 .navbar a:hover{
+  background:var(--green);
+  color:#fff;
+}
+
+.header-2 .icons a
+{
+  border:0px solid;
+  height: 4.5rem;
+  width: 4.5rem;
+  line-height: 4.5rem;
+  border-radius: .5rem;
+  background:#eee;
+  color: var(--black);
+  font-size: 2rem;
+  margin-right: .3rem;
+  text-align: center;
+  cursor: pointer;
+}
+.header-2 .icons a:hover
+{
+  background:var(--green);
+  color: white;
+}
+
+#menu-bar{
+  font-size: 3rem;
+  border-radius: .5rem;
+  border:.1rem solid var(--black);
+  padding:.8rem 1.5rem;
+  color:var(--black);
+  cursor: pointer;
+  display: none;
+}
+
+.header-2 .login-form{
+    position: absolute;
+    top:110%; right:-110%;
+    width:35rem;
+    box-shadow: var(--box-shadow);
+    padding:2rem;
+    border-radius: .5rem;
+    background: #fff;
+    text-align: center;
+}
+
+.header-2 .login-form.active{
+    right:2rem;
+    transition: .4s linear;
+}
+
+.header-2 .login-form h3{
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    color: var(--black);
+}
+
+.header-2 .login-form .box{
+    width: 100%;
+    margin:.7rem 0;
+    background:#eee;
+    border-radius: .5rem;
+    padding:1rem;
+    font-size: 1.6rem;
+    color:var(--black);
+    text-transform: none;
+}
+
+.header-2 .login-form .remember{
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  margin: .7rem 0;
+}
+
+.header-2 .login-form .remember label{
+  font-size: 1.5rem;
+  color: var(--black);
+  cursor: pointer;
+}
+
+.header-2 .login-form p{
+    font-size: 1.4rem;
+    padding:.5rem 0;
+    color:var(--light-color);
+}
+
+.header-2 .login-form p a{
+    color:var(--orange);
+    text-decoration: underline;
+}
+
+.signup{
+	background:url(aboutt.png) no-repeat;
+	background-size: 800px 600px;
+
+}
+
+.signup .mainContainer{
+    border :0px;
+    padding : 20px;
+    display: table;
+    margin: auto;
+    width: 400px;
+    padding-top: 0px;
+    padding-bottom: 5rem;
+    position: relative;
+    left: 300px; top: 15px;
+ 
+}
+
+.signup .mainContainer h1{
+	font-size: 30px;
+}
+
+.signup .labelledClass label,input {
+	display: block;
+	}
+
+
+.signup .labelledClass input{
+    border : none;
+    border : solid 1px #ccc;
+    border-radius: 5px;
+    width: 100%;
+    padding : 5px;
+}
+.signup .labelledClass label{
+	padding-top:1.2rem;
+	margin-bottom: 5px;
+	font-size: 16px;
+}
+
+.signup .labelledClass{margin-bottom : 10px;}
+
+.signup .btn{
+    border : none;
+    width : 100%;    
+    color: white;
+    background-color: green;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+.signup .btn:hover {cursor: pointer;}
+
+.signup .bottomLine{
+    color :black;
+    display: inline;
+}
+
+.signup .bottom{
+    margin-top: 10px;
+    text-align: center;
+}
+
+.signup .bottom a{
+    text-decoration : none;
+    color : var(--black);
+    font-size: 15px;
+    text-decoration: underline;
+}
+.signup .bottom p{
+	font-size: 15px;
+}
+
+.signup .bottom span{
+	font-size: 12px;
+	
+}
+
+
+
+
+
+.footer .box-container{
+  display: flex;
+  gap:1.5rem;
+  flex-wrap: wrap;
+}
+
+.footer .box-container .box{
+  padding:1rem 0;
+  flex:1 1 25rem;
+}
+
+.footer .box-container .box .share a{
+    height:4rem;
+    width:4rem;
+    line-height:4rem;
+    border-radius: .5rem;
+    font-size: 2rem;
+    color:var(--green);
+    margin-right: .2rem;
+    background: #eee;
+    text-align: center;
+}
+
+.footer .box-container .box .share a:hover{
+    background: var(--black);
+    color: #fff;
+}
+
+.footer .box-container .box h3{
+  font-size: 2.5rem;
+  color:var(--black);
+}
+
+.footer .box-container .box h3 i{
+    color:var(--orange);
+}
+
+.footer .box-container .box p{
+  font-size: 1.3rem;
+  color:#666;
+  padding:.7rem 0;
+}
+
+.footer .box-container .box .links{
+    display: block;
+    font-size: 1.5rem;
+    color:var(--light-color);
+    padding:1rem 0;
+}
+
+.footer .box-container .box .links a{
+  display: block;
+  padding:.5rem 0;
+  font-size: 1.7rem;
+  color:#333;
+}
+
+.footer .box-container .box .links a:hover{
+  text-decoration: underline;
+  color:var(--green);
+}
+
+.footer .box-container .box .links i{
+    color:var(--green);
+    padding-right: .5rem;
+}
+
+.footer .box-container .box .links:hover i{
+    padding-right: 2rem;
+}
+  </style>
+ </head>
+ <body>
+
+<!-- header section  -->
+
+<header>
+
+    <div class="header-1">
+
+        <a href="#" class="logo"><i class="fa fa-shopping-basket"></i> Green Cart</a>
+
+        <form action="" class="search-box-container">
+            <input type="search" id="search-box" placeholder="search here...">
+            <label for="search-box" class="fa fa-search"></label>
+        </form>
+
+    </div>
+
+    <div class="header-2">
+
+        <div id="menu-bar" class="fa fa-bars"></div>
+
+        <nav class="navbar">
+            <a href="#home">home</a>
+            <a href="#features">features</a>
+            <a href="#category">category</a>
+            <a href="#product">product</a>
+            <a href="#deal">deal</a>
+            <a href="#contact">contact</a>
+        </nav>
+
+        <div class="icons">
+            <a href="#cart" class="fa fa-shopping-cart" id="cart-btn"></a>
+            <a href="#" class="fa fa-heart" id="heart-btn"></a>
+            <a href="#" class="fa fa-user" id="login-btn"></a>
+
+        </div>
+    </div>
+</header>
+
+
+<section class="signup">
+
+
+	<div class="mainContainer">
+        <h1 style="text-align: center;">Sign Up</h1>
+        <form action="#">
+            <div class="labelledClass">
+                <label for="FirstName">First Name</label>
+                <input type="text" name="FirstName" id="FirstName" maxlength="30">
+                <p></p>
+            </div>
+            <div class="labelledClass">
+                <label for="LastName">Last Name</label>
+                <input type="text" name="LastName" id="LastName" maxlength="30">
+                <p></p>
+            </div>
+            <div class="labelledClass">
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" maxlength="30">
+                <p></p>
+            </div>
+            <div class="labelledClass">
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" maxlength="30">
+                <p></p>
+            </div>
+            <div class="labelledClass">
+                <label for="confirmPassword">confirm password</label>
+                <input type="password" name="confirmPassword" id="confirmPassword" maxlength="30">
+                <p></p>
+            </div>
+            <button class="btn">Sign Up</button>
+        </form>
+    <div class="bottom">
+    <p class = "bottomLine">Already have an account?</p>
+    <a href="index.html">Login Here</a>
+    </div>
+  </div>
+
+</section>
+
+
+
+
+<section class="footer">
+
+    <div class="box-container">
+
+        <div class="box">
+            <a href="#" class="logo"><i class="fa fa-shopping-basket"></i> Green Cart</a>
+            <p>Order online vegetables & fruits directly from the farm. Green Cart is online platform that allows customer to get farm fresh produce directly from farmers.</p>
+            <div class="share">
+                <a href="#" class="fa fa-facebook"></a>
+                <a href="#" class="fa fa-twitter"></a>
+                <a href="#" class="fa fa-instagram"></a>
+                <a href="#" class="fa fa-linkedin"></a>
+            </div>
+        </div>
+        
+       <div class="box">
+            <h3>contact info</h3>
+            <a href="#" class="links"> <i class="fa fa-phone"></i> +91-9626589483 </a>
+            <a href="#" class="links"> <i class="fa fa-phone"></i> +91-9952365198 </a>
+            <a href="#" class="links"> <i class="fa fa-envelope"></i> gmart@gmail.com </a>
+            <a href="#" class="links"> <i class="fa fa-map-marker-alt"></i> TamilNadu, India ,631204 </a>
+        </div>
+
+        <div class="box">
+            <h3>quick links</h3>
+            <div class="links">
+                <a href="#home"><i class="fa fa-arrow-right"></i> home</a>
+                <a href="#category"><i class="fa fa-arrow-right"></i> category</a>
+                <a href="#product"><i class="fa fa-arrow-right"></i> product</a> 
+                <a href="#deal"><i class="fa fa-arrow-right"></i> deal</a>
+                <a href="#contact"><i class="fa fa-arrow-right"></i> contact</a>
+            </div>
+        </div>
+
+        <div class="box">
+            <h3>download app</h3>
+            <div class="links">
+                <a href="#">google play</a>
+                <a href="#">window xp</a>
+                <a href="#">app store</a>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+<script type="text/javascript">
+const fId = document.getElementById('FirstName');
+const lId = document.getElementById('LastName');
+const emailInput = document.getElementById('email');
+const passwordField = document.getElementById('password');
+const confirmPasswordField = document.getElementById('confirmPassword');
+const signUp = document.querySelector('form button');
+
+let errorMsg,currentField,passMsg;
+
+function showError(fieldName){
+    currentField = fieldName;
+    currentField.style.border = '2px solid red';
+    errorMsg = currentField.parentElement.lastElementChild;
+    currentField.name === 'FirstName' || currentField.name === 'LastName' ? 
+    errorMsg.textContent = `${currentField.name.toLowerCase()} should be atleast 5 characters` : 
+    currentField.name === 'email' ? errorMsg.textContent = 'not a valid email' : currentField.name === 'password' ?
+    errorMsg.textContent = 'password should be atleast 8 characters' : errorMsg.textContent = 'passwords do not match';
+    errorMsg.style.color = 'red';
+}
+
+function showPass(fieldName){
+    passMsg = fieldName.parentElement.lastElementChild;
+    fieldName.style.border = '2px solid green';
+    passMsg.textContent = '';    
+}
+
+function checkNames(){
+    fId.value.length >= 5 ? showPass(fId) : showError(fId);
+    lId.value.length >=5 ? showPass(lId) : showError(lId);
+}
+
+function checkEmail(){
+    const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    (re.test(String(emailInput.value).toLowerCase())) ? showPass(emailInput) : showError(emailInput);
+}
+
+function checkConfirmPassword(password){
+    password === confirmPasswordField.value ? showPass(confirmPasswordField) : showError(confirmPasswordField);
+}
+
+function checkPassword(){
+    let password = passwordField.value;
+    password.length >= 6 ? showPass(passwordField) : showError(passwordField);
+    checkConfirmPassword(password);
+}
+
+function checkRequirements(e){
+    checkNames();
+    checkEmail();
+    checkPassword();
+    e.preventDefault();
+}
+
+signUp.addEventListener('click',checkRequirements);
+</script>
+</body>
+</html>
